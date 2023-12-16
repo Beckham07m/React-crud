@@ -12,6 +12,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Avatar from '@mui/material/Avatar';
+import Link from '@mui/material/Link';
 
 export default function Users() {
   const [items, setItems] = useState([]);
@@ -38,7 +39,9 @@ export default function Users() {
               </Typography>
             </Box>
             <Box>
-              <Button variant="contained">Create</Button>
+              <Link href="create">
+                <Button variant="contained">Create</Button>
+              </Link>
             </Box>
           </Box>
 
@@ -76,7 +79,6 @@ export default function Users() {
               </TableBody>
             </Table>
           </TableContainer>
-
         </Paper>
       </Container>
     </React.Fragment>
