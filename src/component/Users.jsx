@@ -50,11 +50,11 @@ export default function Users() {
               <TableHead>
                 <TableRow>
                   <TableCell>ID</TableCell>
-                  <TableCell align="center">Action</TableCell>
+                  <TableCell align="right">Avatar</TableCell>
                   <TableCell align="right">First Name</TableCell>
                   <TableCell align="right">Last Name</TableCell>
                   <TableCell align="right">Username</TableCell>
-                  <TableCell align="right">Avatar</TableCell>
+                  <TableCell align="center">Action</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -66,7 +66,7 @@ export default function Users() {
                       {row.id}
                     </TableCell>
                     <TableCell align="center">
-                      <Box display="flex" justifyContent="center">
+                      <Box display="flex" justifyContent="right">
                         <Avatar alt={row.username} src={row.avatar} />
                       </Box>
                     </TableCell>
