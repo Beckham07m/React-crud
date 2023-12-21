@@ -31,6 +31,9 @@ export default function Users() {
         },
       )
   }
+  const UserUpdate = id => {
+    window.location = '/update/' + id
+  }
 
   const UserDelete = id => {
     var myHeaders = new Headers();
@@ -106,7 +109,7 @@ fetch("https://www.melivecode.com/api/users/delete", requestOptions)
                     <TableCell align="right">{row.username}</TableCell>
                     <TableCell align="right">
                       <ButtonGroup variant="outlined" aria-label="outlined button group">
-                        <Button>Edit</Button>
+                        <Button onClick={() => UserUpdate(row.id)}>Edit</Button>
                         <Button onClick={() => UserDelete(row.id)}>Del</Button>
                       </ButtonGroup>
                     </TableCell>
