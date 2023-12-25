@@ -7,7 +7,7 @@ export default function UserCreate() {
   const handleSubmit = event => {
     event.preventDefault();
     var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Content-Type", "application/json");
 
 var raw = JSON.stringify({
   "fname": fname,

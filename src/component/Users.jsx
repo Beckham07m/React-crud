@@ -64,10 +64,10 @@ fetch("https://www.melivecode.com/api/users/delete", requestOptions)
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="lg" sx={{ p:2 }}>
-        <Paper sx={{ p:2 }}>
+      <Container maxWidth="lg" sx={{ p: 2 }}>
+        <Paper sx={{ p: 2 }}>
           <Box display="flex">
-            <Box sx={{ flexGrow:1 }}>
+            <Box sx={{ flexGrow: 1 }}>
               <Typography variant="h6" gutterBottom>
                 Users
               </Typography>
@@ -79,8 +79,8 @@ fetch("https://www.melivecode.com/api/users/delete", requestOptions)
             </Box>
           </Box>
 
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableContainer component={Paper} sx={{ overflowX: "auto" }}>
+            <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
                   <TableCell>ID</TableCell>
@@ -88,19 +88,20 @@ fetch("https://www.melivecode.com/api/users/delete", requestOptions)
                   <TableCell align="right">First Name</TableCell>
                   <TableCell align="right">Last Name</TableCell>
                   <TableCell align="right">Username</TableCell>
-                  <TableCell align="center">Action</TableCell>
+                  <TableCell align="right">Action</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {items.map((row) => (
                   <TableRow
                     key={row.id}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
                     <TableCell component="th" scope="row">
                       {row.id}
                     </TableCell>
                     <TableCell align="center">
-                      <Box display="flex" justifyContent="right">
+                      <Box display="flex" justifyContent="flex-end">
                         <Avatar alt={row.username} src={row.avatar} />
                       </Box>
                     </TableCell>
@@ -108,7 +109,10 @@ fetch("https://www.melivecode.com/api/users/delete", requestOptions)
                     <TableCell align="right">{row.lname}</TableCell>
                     <TableCell align="right">{row.username}</TableCell>
                     <TableCell align="right">
-                      <ButtonGroup variant="outlined" aria-label="outlined button group">
+                      <ButtonGroup
+                        variant="outlined"
+                        aria-label="outlined button group"
+                      >
                         <Button onClick={() => UserUpdate(row.id)}>Edit</Button>
                         <Button onClick={() => UserDelete(row.id)}>Del</Button>
                       </ButtonGroup>

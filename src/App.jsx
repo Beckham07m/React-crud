@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Users from './component/Users'
-import Navbar from './component/navbar'
+import Navbar from './component/NavBar';
 import UserCreate from './component/UserCreate'
 import UserUpdate from './component/UserUpdate';
 
