@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -18,6 +19,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import SettingsIcon from '@mui/icons-material/Settings';
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonIcon from "@mui/icons-material/Person";
+import { Button } from "@mui/material";
 
 const drawerWidth = 216;
 
@@ -66,20 +68,20 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 const DataItem = [
-  { name: "User", icon: <PersonIcon /> },
-  { name: "Dashboard", icon: <DashboardIcon />, },
-  { name: "Mail", icon: <MailIcon /> },
-  { name: "Setting", icon: <SettingsIcon /> },
+  { name: "User", icon: <PersonIcon />, goto: "/" },
+  { name: "Dashboard", icon: <DashboardIcon />, goto: "/Dashboard" },
+  { name: "Mail", icon: <MailIcon />, goto: "/Mail" },
+  { name: "Setting", icon: <SettingsIcon />, goto: "/" },
 ];
 
 const renderItems = () => {
   return DataItem.map((item) => (
-    <ListItem key={item.name}>
-      <ListItemIcon>
-        {item.icon}
-      </ListItemIcon>
-      <ListItemText primary={item.name} />
-    </ListItem>
+    <Button key={item.name} component={Link} to={`${item.goto}`}>
+      <ListItem key={item.name}>
+        <ListItemIcon>{item.icon}</ListItemIcon>
+        <ListItemText primary={item.name} />
+      </ListItem>
+    </Button>
   ));
 };
 
