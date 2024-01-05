@@ -1,5 +1,5 @@
 import { Container, Typography,Box } from "@mui/material";
-import Navbar from "./NavBar";
+import Navbar from "./Navbar";
 
 function About() {
   return (
